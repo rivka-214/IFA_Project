@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>מנהל משתמשים</h1>
+
+  <h3> משתמשים דמויים</h3>
+  <div class="users-section">
+    <ul>
+      <li *ngFor="let user of MockUsers">
+        <span class="user-id">{{user.id}}</span>
+        <span class="user-name">{{user.name}}</span>
+      </li>
+    </ul>
+  </div>
+
+  <button (click)="loadUsersFromServer()" [disabled]="loading">
+    {{ loading ? '⏳ טוען משתמשים...' : '🔄 Load Users from Server' }}
+  </button>
+
+
+
+  <div *ngIf="errorMessage" class="error-message">
+    ❌ {{errorMessage}}
+  </div>
+
+  <h3 *ngIf="users.length > 0">🌐 משתמשים מהשרת</h3>
+  <div class="users-section" *ngIf="users.length > 0">
+    <ul>
+      <li *ngFor="let user of users">
+        <span class="user-id">{{user.id}}</span>
+        <span class="user-name">{{user.name}}</span>
+      </li>
+    </ul>
+  </div>
