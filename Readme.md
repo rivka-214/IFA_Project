@@ -57,56 +57,59 @@ http://localhost:4200/api/users
 
 ```bash
 npm install
-Run the project:
+```
 
+### ▶️ Run the Project
+
+1. **Run the application:**
+
+```bash
 ng serve
+```
 Open in browser:
+ http://localhost:4200
+---
 
-http://localhost:4200
-🔗 API Endpoints
-GET All Users
-GET /api/users
-Response: 200 OK
+## 🔗 API Endpoints
 
-GET User by ID
-GET /api/users/{id}
-Response:
+### 📌 Get All Users
+* **Method:** `GET`
+* **Path:** `/api/users`
+* **Response:** `200 OK`
 
-200 OK
+### 📌 Get User by ID
+* **Method:** `GET`
+* **Path:** `/api/users/{id}`
+* **Response:** `200 OK` | `404 Not Found`
 
-404 Not Found
+### 📌 Create User
+* **Method:** `POST`
+* **Path:** `/api/users`
+* **Request Body Example:**
 
-POST Create User
-POST /api/users
-Request Body example:
-
+```json
 {
   "id": 10,
   "name": "Test User"
 }
-Response:
+```
+* **Response:** `201 Created` | `400 Bad Request`
 
-201 Created
+---
 
-400 Bad Request
+## 🧠 Technical Concepts Demonstrated 🧠
 
-🧠 Technical Concepts Demonstrated
-Separation of Concerns (Component vs Service)
+* **Separation of Concerns:** Component vs Service.
+* **Angular HttpClient:** For HTTP communication.
+* **Observables:** Asynchronous handling.
+* **RESTful Routing:** Standard API design.
+* **HTTP Status Codes:** Proper response handling.
+* **CORS & JSON:** Configuration in Web API.
 
-HTTP communication using Angular HttpClient
+---
 
-Observables and asynchronous handling
+## 📎 Notes
 
-RESTful routing
-
-Proper HTTP status codes
-
-CORS configuration
-
-JSON formatting configuration in Web API
-
-📎 Notes
-No database is used — data is stored in memory.
-
-The project focuses on clarity, structure, and clean communication between client and server.
+* 🖇️ **No database is used** — data is stored in memory.
+* The project focuses on clarity, structure, and clean communication.
 
